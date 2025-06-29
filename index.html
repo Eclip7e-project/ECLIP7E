@@ -286,17 +286,6 @@
       Please do not send submissions yet; further instructions will be provided when submission opens.
     </p>
   </div>
-<section id="submit">
-    <h2>Submit Your Voice & Suggestions</h2>
-    <p>
-      Share your memories, letters, artworks, protest ideas, awareness campaigns, email templates, or fan projects.
-    </p>
-    <p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSelyIdc0yzCH8xBjcePwVn2D86bEzYzes8SHpHmNFxJN5lyHA/viewform?usp=header" target="_blank" style="color:#fff; text-decoration: underline;">
-        Submit Your Voice Here
-      </a>
-    </p>
-  </section>
   <div class="news-item">
     <h3>📧 Email Campaigns to SM Entertainment & Media</h3>
     <p><strong>Date:</strong> Starting July 3, 2025</p>
@@ -428,6 +417,17 @@
     </p>
   </section>
  </script>
+  <section id="submit">
+    <h2>Submit Your Voice & Suggestions</h2>
+    <p>
+      Share your memories, letters, artworks, protest ideas, awareness campaigns, email templates, or fan projects.
+    </p>
+    <p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSelyIdc0yzCH8xBjcePwVn2D86bEzYzes8SHpHmNFxJN5lyHA/viewform?usp=header" target="_blank" style="color:#fff; text-decoration: underline;">
+        Submit Your Voice Here
+      </a>
+    </p>
+  </section>
   <section id="thanks">
     <h2>Wall of Light</h2>
     <p>
@@ -439,110 +439,6 @@
       This is our wall of light, built by all of us.
     </p>
   </section>
-<section id="comments">
-  <h2>Comment Wall</h2>
-  <p>Leave your thoughts, love, or support messages. This wall is open to all voices who believe in RIIZE as seven.</p>
-
-  <form id="comment-form">
-    <input type="text" id="name" placeholder="Your name or nickname" required />
-    <textarea id="message" placeholder="Your message..." required></textarea>
-    <button type="submit">Post Comment</button>
-  </form>
-
-  <div id="comment-list"></div>
-</section>
-
-<style>
-  #comments {
-    max-width: 850px;
-    margin: auto;
-    padding: 2rem;
-    background: rgba(25, 25, 25, 0.9);
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(255,255,255,0.1);
-    margin-bottom: 2rem;
-    position: relative;
-    z-index: 1;
-  }
-
-  #comment-form {
-    display: flex;
-    flex-direction: column;
-    margin-top: 1rem;
-  }
-
-  #comment-form input,
-  #comment-form textarea,
-  #comment-form button {
-    width: 100%;
-    margin: 0.5rem 0;
-    padding: 0.75rem 1rem;
-    font-size: 1rem;
-    border: none;
-    border-radius: 8px;
-    background: #111;
-    color: #eee;
-  }
-
-  #comment-form button {
-    background: #fff;
-    color: #000;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  #comment-form button:hover {
-    background: #eee;
-    box-shadow: 0 6px 12px rgba(255,255,255,0.6);
-  }
-
-#comment-list {
-  margin-top: 2rem;
-}
-
-.comment {
-  border-bottom: 1px solid #444;
-  padding: 1rem 0;
-}
-
-.comment strong {
-  color: #fff;
-  font-weight: 600;
-}
-
-.comment p {
-  color: #ccc;
-  margin: 0.25rem 0 0;
-}
-</style>
-<script>
-  document.getElementById('comment-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const name = document.getElementById('name').value.trim();
-    const message = document.getElementById('message').value.trim();
-
-    if (!name || !message) return;
-
-    const commentList = document.getElementById('comment-list');
-
-    const comment = document.createElement('div');
-    comment.classList.add('comment');
-
-    const nameEl = document.createElement('strong');
-    nameEl.textContent = name;
-
-    const msgEl = document.createElement('p');
-    msgEl.textContent = message;
-
-    comment.appendChild(nameEl);
-    comment.appendChild(msgEl);
-    commentList.prepend(comment); // adds newest on top
-
-    // Clear form
-    document.getElementById('comment-form').reset();
-  });
 </script>
 <div id="disqus_thread"></div>
 <script>
