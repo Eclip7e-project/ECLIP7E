@@ -429,5 +429,20 @@
     document.getElementById('comment-form').reset();
   });
 </script>
+  <div id="disqus_thread"></div>
+<script>
+  var disqus_config = function () {
+    this.page.url = window.location.href;  // current page URL
+    this.page.identifier = window.location.pathname; // unique page identifier
+  };
+
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://eclip7e-project.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </body>
 </html>   
