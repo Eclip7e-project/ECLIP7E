@@ -243,6 +243,7 @@
 
   <nav>
     <a href="#about">About</a>
+    <a href="#news">News and project updates</a>
     <a href="#memories">Memories</a>
     <a href="#letters">Letters</a>
     <a href="#art">Fan Works</a>
@@ -265,6 +266,142 @@
       as it was always meant to be.
     </p>
   </section>
+
+<!-- News and project updates -->
+<section id="news" class="news-section">
+  <h2>📢 News and project updates</h2>
+
+  <div class="news-item">
+    <h3>🌘 Eclip7e Fanbase Statement & Blog Launch</h3>
+    <p>
+      We have released our official fanbase statement reaffirming our commitment to justice for Seunghan and the full reinstatement of RIIZE as seven members. 
+      Alongside this, our fanbase blog is now live and will serve as the central hub for all fan projects, resources, and updates.  
+      <br><br>
+      <strong>Submission period for fanworks and contributions will open on July 1st and remain open till July 7th.</strong>  
+      After that, submissions will close for two weeks to allow for solo management, review, and upload of content.  
+      This cycle will repeat to ensure steady but manageable content updates.
+      <br><br>
+      Visit the blog here:  
+      <a href="https://eclip7e-project.github.io/ECLIP7E/" target="_blank" rel="noopener" style="color:#7b61ff;">https://eclip7e-project.github.io/ECLIP7E/</a>  
+      Please do not send submissions yet; further instructions will be provided when submission opens.
+    </p>
+  </div>
+<section id="submit">
+    <h2>Submit Your Voice & Suggestions</h2>
+    <p>
+      Share your memories, letters, artworks, protest ideas, awareness campaigns, email templates, or fan projects.
+    </p>
+    <p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSelyIdc0yzCH8xBjcePwVn2D86bEzYzes8SHpHmNFxJN5lyHA/viewform?usp=header" target="_blank" style="color:#fff; text-decoration: underline;">
+        Submit Your Voice Here
+      </a>
+    </p>
+  </section>
+  <div class="news-item">
+    <h3>📧 Email Campaigns to SM Entertainment & Media</h3>
+    <p><strong>Date:</strong> Starting July 3, 2025</p>
+    <p>
+      We will begin coordinated email campaigns targeting SM Entertainment executives and key media outlets to demand justice, accountability, and transparency regarding Seunghan’s situation. 
+      These emails are carefully drafted to call for Seunghan’s reinstatement, a public apology, and stronger protections for idols. 
+      Instructions and participation templates will be shared shortly.
+    </p>
+  </div>
+
+  <div class="news-item">
+    <h3>💌 Upcoming Fanletter Campaign</h3>
+    <p><strong>Date:</strong> July 10–17, 2025</p>
+    <p>
+      A global fanletter campaign will launch across Weverse, X (Twitter), and Instagram to show continued support for all seven RIIZE members, especially Seunghan.  
+      Fans are encouraged to write heartfelt letters, poems, or messages of hope and unity using specific hashtags to amplify our voice.  
+      Templates and detailed participation guidelines will be provided to help everyone join confidently and respectfully.
+    </p>
+  </div>
+</section>
+
+<style>
+  /* News Section Styles */
+  .news-section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #121212;
+    border-radius: 10px;
+    color: #eee;
+    font-family: 'Arial', sans-serif;
+  }
+  .news-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #7b61ff;
+    padding-bottom: 10px;
+  }
+  .news-item {
+    background: #1e1e1e;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    box-shadow: 0 0 8px rgba(123, 97, 255, 0.3);
+  }
+  .news-item h3 {
+    margin-top: 0;
+    color: #7b61ff;
+  }
+  .news-item p {
+    line-height: 1.5;
+    font-size: 1rem;
+  }
+  a {
+    color: #7b61ff;
+    text-decoration: underline;
+  }
+
+  /* Navigation link styles */
+  nav ul {
+    display: flex;
+    gap: 15px;
+  }
+  nav a {
+    color: #ccc;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  nav a.active, nav a:hover {
+    background-color: #7b61ff;
+    color: #fff;
+  }
+</style>
+
+<script>
+  // Simple scroll spy to highlight nav links on scroll
+  document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav a');
+
+    function onScroll() {
+      let currentSectionId = '';
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 60;
+        if (window.scrollY >= sectionTop) {
+          currentSectionId = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + currentSectionId) {
+          link.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', onScroll);
+
+    // Run on page load
+    onScroll();
+  });
+</script>  
 
   <section id="memories">
     <h2>Shared Memories</h2>
@@ -290,29 +427,7 @@
       reviewed and uploaded as a tribute to the creativity and dedication of ot7 supporters worldwide.
     </p>
   </section>
-
-  <section id="submit">
-    <h2>Submit Your Voice & Suggestions</h2>
-    <p>
-      Share your memories, letters, artworks, protest ideas, awareness campaigns, email templates, or fan projects.
-    </p>
-    <p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSelyIdc0yzCH8xBjcePwVn2D86bEzYzes8SHpHmNFxJN5lyHA/viewform?usp=header" target="_blank" style="color:#fff; text-decoration: underline;">
-        Submit Your Voice Here
-      </a>
-    </p>
-
-    <section id="submission-window">
-      <h3>Submissions</h3>
-      <p>
-        Submission windows are open every two weeks for one week only!<br />
-        This helps us focus and feature your work with the care it deserves.
-        <br /><br />
-        <strong>Current Submission Period: July 1–7</strong>
-      </p>
-    </section>
-  </section>
-</script>
+ </script>
   <section id="thanks">
     <h2>Wall of Light</h2>
     <p>
@@ -324,7 +439,112 @@
       This is our wall of light, built by all of us.
     </p>
   </section>
-  <div id="disqus_thread"></div>
+<section id="comments">
+  <h2>Comment Wall</h2>
+  <p>Leave your thoughts, love, or support messages. This wall is open to all voices who believe in RIIZE as seven.</p>
+
+  <form id="comment-form">
+    <input type="text" id="name" placeholder="Your name or nickname" required />
+    <textarea id="message" placeholder="Your message..." required></textarea>
+    <button type="submit">Post Comment</button>
+  </form>
+
+  <div id="comment-list"></div>
+</section>
+
+<style>
+  #comments {
+    max-width: 850px;
+    margin: auto;
+    padding: 2rem;
+    background: rgba(25, 25, 25, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(255,255,255,0.1);
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  #comment-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+
+  #comment-form input,
+  #comment-form textarea,
+  #comment-form button {
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background: #111;
+    color: #eee;
+  }
+
+  #comment-form button {
+    background: #fff;
+    color: #000;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  #comment-form button:hover {
+    background: #eee;
+    box-shadow: 0 6px 12px rgba(255,255,255,0.6);
+  }
+
+#comment-list {
+  margin-top: 2rem;
+}
+
+.comment {
+  border-bottom: 1px solid #444;
+  padding: 1rem 0;
+}
+
+.comment strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.comment p {
+  color: #ccc;
+  margin: 0.25rem 0 0;
+}
+</style>
+<script>
+  document.getElementById('comment-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (!name || !message) return;
+
+    const commentList = document.getElementById('comment-list');
+
+    const comment = document.createElement('div');
+    comment.classList.add('comment');
+
+    const nameEl = document.createElement('strong');
+    nameEl.textContent = name;
+
+    const msgEl = document.createElement('p');
+    msgEl.textContent = message;
+
+    comment.appendChild(nameEl);
+    comment.appendChild(msgEl);
+    commentList.prepend(comment); // adds newest on top
+
+    // Clear form
+    document.getElementById('comment-form').reset();
+  });
+</script>
+<div id="disqus_thread"></div>
 <script>
   var disqus_config = function () {
     this.page.url = window.location.href;  // current page URL
