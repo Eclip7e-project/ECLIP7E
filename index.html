@@ -1,53 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <style>
-    .picture-section {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr); /* 2 per row */
-      gap: 20px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
+   .picture-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 per row */
+  gap: 20px; /* space between images */
+  max-width: 800px;
+  margin: 0 auto;
+}
 
-    .picture-frame img {
-      width: 100%;
-      border-radius: 12px;
-      border: 2px solid gold;
-      display: block;
-    }
+.picture-frame img {
+  width: 100%;
+  border-radius: 12px;
+  border: 2px solid gold; /* adds star-like frame effect */
+  display: block;
+}
 
-    .picture-caption {
-      text-align: center;
-      margin-top: 8px;
-      font-style: italic;
-    }
-  </style>
-</head>
-<body>
-
-  <section class="picture-section">
-    <div class="picture-frame">
-      <a href="images/img1.jpg" download>
-        <img src="images/img1.jpg" alt="Letter Image 1">
-      </a>
-      <div class="picture-caption">Love Wins All</div>
-    </div>
-
-    <div class="picture-frame">
-      <a href="images/img2.jpg" download>
-        <img src="images/img2.jpg" alt="Letter Image 2">
-      </a>
-      <div class="picture-caption">Love Wins All</div>
-    </div>
-
-    <div class="picture-frame">
-      <a href="images/img3.jpg" download>
-        <img src="images/img3.jpg" alt="Letter Image 3">
-      </a>
-      <div class="picture-caption">Love Wins All</div>
-    </div>
-  </section>
+.picture-caption {
+  text-align: center;
+  margin-top: 8px;
+  font-style: italic;
+}
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8" />
@@ -662,24 +635,27 @@
     margin-top: 0.5rem;
   }
 </style>
-<div class="picture-section">
+<section class="picture-section">
   <div class="picture-frame">
     <a href="images/img1.jpg" download>
-    <img src="img1.jpg" alt="Letter Image 1">
+      <img src="images/img1.jpg" alt="Letter Image 1">
+    </a>
     <div class="picture-caption">Love Wins All</div>
   </div>
+
   <div class="picture-frame">
     <a href="images/img2.jpg" download>
-    <img src="img2.jpg" alt="Letter Image 2">
+      <img src="images/img2.jpg" alt="Letter Image 2">
+    </a>
     <div class="picture-caption">Love Wins All</div>
   </div>
-   </div>
+
   <div class="picture-frame">
     <a href="images/img3.jpg" download>
-    <img src="img3.jpg" alt="Letter Image 3">
+      <img src="images/img3.jpg" alt="Letter Image 3">
+    </a>
     <div class="picture-caption">Love Wins All</div>
   </div>
-</div>
   </section>
  </script>
   <section id="submit">
@@ -723,6 +699,7 @@
 </body>
 </html>   
 <!-- force rebuild -->
+
 
 
 
