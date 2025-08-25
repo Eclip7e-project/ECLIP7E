@@ -614,7 +614,26 @@
     margin-top: 0.5rem;
   }
 </style>
+.picture-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 per row */
+  gap: 20px; /* space between items */
+  max-width: 800px;
+  margin: 0 auto;
+}
 
+.picture-frame img {
+  width: 100%;
+  border-radius: 12px;
+  border: 2px solid gold;
+  display: block;
+}
+
+.picture-caption {
+  text-align: center;
+  margin-top: 8px;
+  font-style: italic;
+}
 <div class="picture-section">
   <div class="picture-frame">
     <a href="images/img1.jpg" download>
@@ -627,7 +646,6 @@
     <div class="picture-caption">Love Wins All</div>
   </div>
    </div>
-    <p>
   <div class="picture-frame">
     <a href="images/img3.jpg" download>
     <img src="img3.jpg" alt="Letter Image 3">
@@ -677,6 +695,7 @@
 </body>
 </html>   
 <!-- force rebuild -->
+
 
 
 
