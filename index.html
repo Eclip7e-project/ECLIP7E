@@ -233,6 +233,82 @@
       font-size: 1.6rem;
     }
   }
+
+
+/* Extra responsive fixes */
+@media (max-width: 768px) {
+  header {
+    padding: 2rem 1rem 1.5rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+
+  header p {
+    font-size: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+    padding: 0.8rem;
+  }
+
+  nav a {
+    margin: 0.3rem 0;
+    font-size: 0.95rem;
+  }
+
+  section {
+    padding: 1.5rem 1rem;
+    margin: 1.5rem 1rem;
+    border-radius: 8px;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* Make images responsive */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Weekly favorites flyer fix */
+  .weekly-favorites img,
+  .flyer-section img {
+    max-width: 90% !important;
+  }
+
+  /* Fan works grid stacks vertically */
+  .picture-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .picture-frame {
+    max-width: 90%;
+  }
+
+  /* Letters & memories boxes */
+  .letter, .memory {
+    margin: 1rem auto;
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+}
+
+  
 </style>
 </head>
 <body>
@@ -742,6 +818,7 @@ To share the warmth of this project, we also feature <strong>weekly favorite not
 </body>
 </html>   
 <!-- force rebuild -->
+
 
 
 
