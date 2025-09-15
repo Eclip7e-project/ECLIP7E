@@ -311,6 +311,23 @@
   }
 }
 
+/* Desktop: limit size */
+.weekly-favorites img {
+  max-width: 700px; /* or whatever fits your layout */
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* Mobile: fill most of the screen */
+@media (max-width: 600px) {
+  .weekly-favorites img {
+    width: 95%;
+    max-width: none; /* ignore desktop limit on phones */
+    height: auto;
+  }
+}
 
   
 </style>
@@ -847,6 +864,7 @@ document.getElementById("closeModal").onclick = () => {
 </body>
 </html>   
 <!-- force rebuild -->
+
 
 
 
