@@ -365,13 +365,13 @@
     </p>
   </section>
 
-  <style>
-  /* Basic reset for the component */
+ <!-- RE:UNION Pinned Announcement (dark mode version) -->
+<style>
   :root{
     --accent: #ff7a00; /* RE:UNION orange */
-    --bg: #fffdf8;
-    --text: #0b0b0b;
-    --muted: #6b6b6b;
+    --bg: #1a1a1a; /* black page background */
+    --panel: #ff7a00; /* orange panel */
+    --text: #ffffff; /* white text */
     --panel-radius: 12px;
     --max-width: 920px;
   }
@@ -384,17 +384,16 @@
     padding: 0 1rem;
   }
 
-  /* pinned banner */
   .reunion-pin{
     display:flex;
     gap:12px;
     align-items:center;
     justify-content:space-between;
-    background:linear-gradient(90deg, rgba(255,122,0,0.06), rgba(255,122,0,0.02));
-    border:1px solid rgba(255,122,0,0.12);
+    background: var(--panel);
+    border:1px solid rgba(0,0,0,0.2);
     padding:10px 14px;
     border-radius:10px;
-    box-shadow: 0 6px 18px rgba(9,10,11,0.04);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
   }
   .reunion-pin .left{
     display:flex;
@@ -403,58 +402,38 @@
   }
   .reunion-dot{
     width:12px;height:12px;border-radius:50%;
-    background:var(--accent);
-    box-shadow: 0 0 10px rgba(255,122,0,0.25);
+    background:white;
+    box-shadow: 0 0 10px rgba(255,255,255,0.8);
   }
-  .reunion-title{
-    font-weight:700;font-size:15px;
-  }
-  .reunion-cta{
-    font-size:13px;color:var(--muted);
-  }
-  .reunion-pin button{
-    background:transparent;border:0;color:var(--accent);font-weight:700;
+  .reunion-title{ font-weight:700;font-size:15px;color:var(--text);}
+  .reunion-cta{ font-size:13px;color:var(--text);}
+  .reunion-pin a{
+    background:transparent;border:0;color:var(--text);font-weight:700;
     cursor:pointer;padding:6px 10px;border-radius:8px;
+    text-decoration:underline;
   }
 
-  /* announcement panel */
   .reunion-panel{
     margin-top:12px;
-    background:var(--bg);
+    background: var(--panel);
     border-radius:var(--panel-radius);
-    border:1px solid rgba(11,11,11,0.06);
     padding:18px;
-    transition:all .28s ease;
+    color: var(--text);
   }
-  .reunion-panel h2{
-    margin:0 0 8px 0;font-size:20px;color:var(--text);
-  }
-  .reunion-panel p{ margin:8px 0;color:var(--muted);line-height:1.45;}
-  .reunion-badges{ display:flex; gap:8px; flex-wrap:wrap; margin:10px 0;}
-  .badge{ background:rgba(255,122,0,0.12); color:var(--accent); padding:6px 10px;border-radius:999px;font-weight:700;font-size:13px;}
-  .reunion-actions{ margin-top:12px; display:flex; gap:10px; flex-wrap:wrap; }
+  .reunion-panel h2{margin:0 0 8px 0;font-size:20px;color:var(--text);}
+  .reunion-panel p{margin:8px 0;color:var(--text);line-height:1.45;}
+  .reunion-badges{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0;}
+  .badge{background:rgba(0,0,0,0.2);color:white;padding:6px 10px;border-radius:999px;font-weight:700;font-size:13px;}
+
+  .reunion-actions{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;}
   .btn{
-    background:var(--accent);color:white;padding:8px 12px;border-radius:10px;border:0;font-weight:700;
+    background:black;color:white;padding:8px 12px;border-radius:10px;border:0;font-weight:700;
     cursor:pointer;text-decoration:none;
-  }
-  .btn-outline{
-    background:transparent;color:var(--accent);border:1px solid rgba(255,122,0,0.15);padding:8px 12px;border-radius:10px;font-weight:700;
-    text-decoration:none;
-  }
-
-  /* collapsed details */
-  .reunion-details{ margin-top:12px; display:none; }
-  .reunion-details.open{ display:block; }
-
-  /* small screens */
-  @media (max-width:520px){
-    .reunion-title{ font-size:14px; }
-    .reunion-panel{ padding:14px; }
   }
 </style>
 
-<div class="reunion-container" id="reunion-announce">
-  <!-- Pinned banner -->
+<div class="reunion-container">
+  <!-- Banner -->
   <div class="reunion-pin" role="region" aria-label="RE:UNION pinned announcement">
     <div class="left">
       <span class="reunion-dot" aria-hidden="true"></span>
@@ -463,45 +442,35 @@
         <div class="reunion-cta">Eclip7e continues as the blog; RE:UNION carries the movement forward.</div>
       </div>
     </div>
-
     <div>
-      <button type="button" id="reunion-toggle">Read announcement ▾</button>
+      <a href="https://x.com/R7_UNION/status/1970110839186481166" target="_blank" rel="noopener">Read announcement ↗</a>
     </div>
   </div>
 
-  <!-- Full announcement panel (collapsible) -->
-  <section class="reunion-panel" id="reunion-panel" aria-hidden="true">
+  <!-- Full panel -->
+  <section class="reunion-panel">
     <h2>✦ RE:UNION Official Rebrand</h2>
-
     <p>
-      Eclip7e began as a small, determined fanbase committed to one truth: <strong>RIIZE as seven</strong>.
+      Eclip7e began as a small, determined fanbase committed to one truth: <strong>RII7E as seven</strong>.
       That work, the site, the projects, the love, remains our foundation and will continue to live on the blog under the name <strong>Eclip7e</strong>.
     </p>
-
     <p>
       Today we step forward with a clearer identity: <strong>RE:UNION</strong>. This name reflects the movement’s next phase, organized, focused, and vocal, while honoring the roots that brought us here.
     </p>
-
-    <div class="reunion-badges" aria-hidden="true">
+    <div class="reunion-badges">
       <span class="badge">Justice</span>
       <span class="badge">Reinstatement</span>
       <span class="badge">Accountability</span>
     </div>
-
-    <div class="reunion-details" id="reunion-details">
-      <p>
-        <strong>What changes:</strong> public-facing posts and project branding will use the RE:UNION name and visuals; the Eclip7e blog remains for archives and development.
-      </p>
-      <p>
-        <strong>What stays the same:</strong> our mission, justice for Seunghan, safety for RII7E, and the demand for full reinstatement. All existing projects and resources will be preserved and reused under the new banner.
-      </p>
-      <p>
-        We invite every BRII7E to join, share, and help keep our efforts organized. This rebrand is not erasing the past, it’s sharpening our path forward.
-      </p>
+    <p>
+      Our mission remains the same: justice for Seunghan, safety for RII7E, and the demand for full reinstatement. All existing projects and resources continue under this new banner.
+    </p>
+    <div class="reunion-actions">
+      <a class="btn" href="https://x.com/R7_UNION/status/1970110839186481166" target="_blank" rel="noopener">See Announcement on X</a>
     </div>
-
   </section>
 </div>
+
 
 <script>
   // Toggle panel and update aria attributes
@@ -629,12 +598,10 @@
     We RII7E, for Seunghan, for RIIZE, for all of us. ✦
   </p>
 
-  <p>
     📌 RII7E HOUR GUIDE
     <div class="guide-section" style="text-align: center; margin: 20px 0;">
   <img src="reunion rii7e hour guide" alt="RE:UNION RII7E HOUR GUIDE" style="max-width: 250px; width: 100%; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
 </div>
-  </p>
 
   
   
@@ -1117,6 +1084,7 @@ document.getElementById("closeModal").onclick = () => {
 </body>
 </html>   
 <!-- force rebuild -->
+
 
 
 
