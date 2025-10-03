@@ -365,6 +365,181 @@
     </p>
   </section>
 
+  <style>
+  /* Basic reset for the component */
+  :root{
+    --accent: #ff7a00; /* RE:UNION orange */
+    --bg: #fffdf8;
+    --text: #0b0b0b;
+    --muted: #6b6b6b;
+    --panel-radius: 12px;
+    --max-width: 920px;
+  }
+
+  .reunion-container{
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    color: var(--text);
+    margin: 1rem auto;
+    max-width: var(--max-width);
+    padding: 0 1rem;
+  }
+
+  /* pinned banner */
+  .reunion-pin{
+    display:flex;
+    gap:12px;
+    align-items:center;
+    justify-content:space-between;
+    background:linear-gradient(90deg, rgba(255,122,0,0.06), rgba(255,122,0,0.02));
+    border:1px solid rgba(255,122,0,0.12);
+    padding:10px 14px;
+    border-radius:10px;
+    box-shadow: 0 6px 18px rgba(9,10,11,0.04);
+  }
+  .reunion-pin .left{
+    display:flex;
+    gap:12px;
+    align-items:center;
+  }
+  .reunion-dot{
+    width:12px;height:12px;border-radius:50%;
+    background:var(--accent);
+    box-shadow: 0 0 10px rgba(255,122,0,0.25);
+  }
+  .reunion-title{
+    font-weight:700;font-size:15px;
+  }
+  .reunion-cta{
+    font-size:13px;color:var(--muted);
+  }
+  .reunion-pin button{
+    background:transparent;border:0;color:var(--accent);font-weight:700;
+    cursor:pointer;padding:6px 10px;border-radius:8px;
+  }
+
+  /* announcement panel */
+  .reunion-panel{
+    margin-top:12px;
+    background:var(--bg);
+    border-radius:var(--panel-radius);
+    border:1px solid rgba(11,11,11,0.06);
+    padding:18px;
+    transition:all .28s ease;
+  }
+  .reunion-panel h2{
+    margin:0 0 8px 0;font-size:20px;color:var(--text);
+  }
+  .reunion-panel p{ margin:8px 0;color:var(--muted);line-height:1.45;}
+  .reunion-badges{ display:flex; gap:8px; flex-wrap:wrap; margin:10px 0;}
+  .badge{ background:rgba(255,122,0,0.12); color:var(--accent); padding:6px 10px;border-radius:999px;font-weight:700;font-size:13px;}
+  .reunion-actions{ margin-top:12px; display:flex; gap:10px; flex-wrap:wrap; }
+  .btn{
+    background:var(--accent);color:white;padding:8px 12px;border-radius:10px;border:0;font-weight:700;
+    cursor:pointer;text-decoration:none;
+  }
+  .btn-outline{
+    background:transparent;color:var(--accent);border:1px solid rgba(255,122,0,0.15);padding:8px 12px;border-radius:10px;font-weight:700;
+    text-decoration:none;
+  }
+
+  /* collapsed details */
+  .reunion-details{ margin-top:12px; display:none; }
+  .reunion-details.open{ display:block; }
+
+  /* small screens */
+  @media (max-width:520px){
+    .reunion-title{ font-size:14px; }
+    .reunion-panel{ padding:14px; }
+  }
+</style>
+
+<div class="reunion-container" id="reunion-announce">
+  <!-- Pinned banner -->
+  <div class="reunion-pin" role="region" aria-label="RE:UNION pinned announcement">
+    <div class="left">
+      <span class="reunion-dot" aria-hidden="true"></span>
+      <div>
+        <div class="reunion-title">RE:UNION Rebrand live</div>
+        <div class="reunion-cta">Eclip7e continues as the blog; RE:UNION carries the movement forward.</div>
+      </div>
+    </div>
+
+    <div>
+      <button type="button" id="reunion-toggle">Read announcement ▾</button>
+    </div>
+  </div>
+
+  <!-- Full announcement panel (collapsible) -->
+  <section class="reunion-panel" id="reunion-panel" aria-hidden="true">
+    <h2>✦ RE:UNION Official Rebrand</h2>
+
+    <p>
+      Eclip7e began as a small, determined fanbase committed to one truth: <strong>RIIZE as seven</strong>.
+      That work, the site, the projects, the love, remains our foundation and will continue to live on the blog under the name <strong>Eclip7e</strong>.
+    </p>
+
+    <p>
+      Today we step forward with a clearer identity: <strong>RE:UNION</strong>. This name reflects the movement’s next phase, organized, focused, and vocal, while honoring the roots that brought us here.
+    </p>
+
+    <div class="reunion-badges" aria-hidden="true">
+      <span class="badge">Justice</span>
+      <span class="badge">Reinstatement</span>
+      <span class="badge">Accountability</span>
+    </div>
+
+    <div class="reunion-details" id="reunion-details">
+      <p>
+        <strong>What changes:</strong> public-facing posts and project branding will use the RE:UNION name and visuals; the Eclip7e blog remains for archives and development.
+      </p>
+      <p>
+        <strong>What stays the same:</strong> our mission, justice for Seunghan, safety for RII7E, and the demand for full reinstatement. All existing projects and resources will be preserved and reused under the new banner.
+      </p>
+      <p>
+        We invite every BRII7E to join, share, and help keep our efforts organized. This rebrand is not erasing the past, it’s sharpening our path forward.
+      </p>
+    </div>
+
+  </section>
+</div>
+
+<script>
+  // Toggle panel and update aria attributes
+  (function(){
+    const toggle = document.getElementById('reunion-toggle');
+    const panel = document.getElementById('reunion-panel');
+    const details = document.getElementById('reunion-details');
+    const copyBtn = document.getElementById('reunion-copy');
+
+    let open = false;
+    toggle.addEventListener('click', () => {
+      open = !open;
+      if(open){
+        toggle.textContent = 'Hide announcement ▴';
+        details.classList.add('open');
+        panel.setAttribute('aria-hidden', 'false');
+      } else {
+        toggle.textContent = 'Read announcement ▾';
+        details.classList.remove('open');
+        panel.setAttribute('aria-hidden', 'true');
+      }
+    });
+
+    // Copy short announcement text for easy repost
+    copyBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const short = "RE:UNION is live, Eclip7e remains the blog, RE:UNION carries the movement forward. Justice • Reinstatement • Accountability.;
+      navigator.clipboard?.writeText(short).then(() => {
+        copyBtn.textContent = 'Copied!';
+        setTimeout(()=> copyBtn.textContent = 'Copy short announcement', 2000);
+      }).catch(() => {
+        alert('Copy failed — you can manually select & copy the short message.');
+      });
+    });
+  })();
+</script>
+
+
 <!-- News and project updates -->
 <section id="news" class="news-section">
   <h2>📢 News and project updates</h2>
@@ -416,8 +591,81 @@
 <p>🧡 Join us daily by sharing fanart, messages, edits, or memories celebrating that day’s member.</p>
 </div>
 
+
+
+<div class="news-item">
+  <h5>RII7E HOUR</h5>
+   <p>
+    RII7E HOUR is our daily time to come together as BRII7E, speak up for Seunghan and RIIZE, and demand accountability from SM Entertainment. 
+    Twice a day, we post at the same time to maximize visibility and show that our voices are strongest when united.
+  </p>
+
+  <h3>🕖 When?</h3>
+  <ul>
+    <li>7AM KST</li>
+    <li>7PM KST</li>
+  </ul>
+  <p>Join one or both, every voice makes a difference!</p>
+
+  <h3>📢 How to Join:</h3>
+  <ul>
+    <li>Use up to 3 hashtags per post to avoid spam filters.</li>
+    <li>Tag <strong>@RIIZE_official</strong> and <strong>@SMTOWNGLOBAL</strong>.</li>
+    <li>Support fellow BRII7E by liking, retweeting, and replying.</li>
+    <li>Send respectful, encouraging messages on Weverse during the same hour.</li>
+  </ul>
+
+  <h3>🔁 Hashtags</h3>
+  <p>
+    Official hashtags are shared daily at 7AM & 7PM KST to keep our efforts coordinated and effective. 🧡
+  </p>
+
+  <h3>Why It Matters:</h3>
+  <p>
+    This isn’t just about trends, it’s about justice, visibility, and unity. Every post is a protest. Every message adds strength. Together, we show SM that BRII7E will not be silenced.
+  </p>
+
+  <p>
+    We RII7E, for Seunghan, for RIIZE, for all of us. ✦
+  </p>
+
+  <p>
+    📌 RII7E HOUR GUIDE
+    <div class="guide-section" style="text-align: center; margin: 20px 0;">
+  <img src="reunion rii7e hour guide" alt="RE:UNION RII7E HOUR GUIDE" style="max-width: 250px; width: 100%; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+</div>
+  </p>
+
+  
+  
+  <div class="news-item">
+    <h6>✦ 7 DAYS FOR RII7E ✦</h6>
+     <p>
+   This project is a week-long, organized posting campaign led by BRII7E to demand fair treatment for RIIZE, justice for Seunghan, accountability from SM Entertainment, and lasting change in the K-pop industry.
+
+Our goal is simple but powerful: by uniting our voices and coordinating our actions, we can build consistent visibility and momentum that SM Entertainment and the wider public cannot ignore.
+
+✦ What We’re Demanding:
+
+Fair treatment and protection for all RIIZE members
+
+Justice for Seunghan, including acknowledgment of the harm he’s faced
+
+Seunghan’s rightful reinstatement in RIIZE
+
+Transparency and accountability from SM Entertainment
+
+A safer, more respectful standard for artists across the industry
+  <p>
+    Each day has a unique theme and dedicated hashtags, released at <strong>9 AM KST.</strong> Fans are encouraged to post throughout the day, boost each other’s posts, and keep engagement respectful and focused.
+  </p>
+  <p>
+    This project is about consistency, visibility, and unity. Every post matters, together, we’re proving that BRII7E is organized, persistent, and committed to ensuring Seunghan and RIIZE get the justice they deserve.
+  </p>
+  </div>
+  
  <div class="news-item">
-  <h5>✨ RII7E NOTE PROJECT ✨</h5>
+  <h7>✨ RII7E NOTE PROJECT ✨</h7>
   <p><strong>Launched:</strong> September 4, 2025</p>
 
 
@@ -444,8 +692,11 @@ To share the warmth of this project, we also feature <strong>weekly favorite not
 <!-- Example for one image -->
 <div class="weekly-favorites">
   <img src="week1favorites.png" alt="Week 1 Favorite Notes" class="favorite-img">
+  <p>WEEK 1</p>
   <img src="week2favorites.png" alt="Week 2 Favorite Notes" class="favorite-img">
+  <p>WEEK 2</p>
   <img src="week3favorites.png" alt="Week 3 Favorite Notes" class="favorite-img">
+  <p>WEEK 3</p>
 </div>
 
 <!-- Modal -->
@@ -866,6 +1117,7 @@ document.getElementById("closeModal").onclick = () => {
 </body>
 </html>   
 <!-- force rebuild -->
+
 
 
 
