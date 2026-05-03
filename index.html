@@ -329,7 +329,22 @@
   }
 }
 
-  
+  .square {
+      width: 350px;
+      height: 350px;
+      background: #ff914d;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      box-sizing: border-box;
+      text-align: center;
+      color: black;
+      font-size: 20px;
+      line-height: 1.6;
+      border-radius: 10px;
+      overflow-wrap: break-word;
+    }
 </style>
 </head>
 <body>
@@ -1096,22 +1111,13 @@ To share the warmth of this project, we also feature <strong>weekly favorite not
       When content is published, and the creator gives permission, their name or handle will be honored on this page.
       This is our wall of light, built by all of us.
     </p>
- <p style="margin-top: 1rem; font-style: italic; color: #ccc;"> 
- const names = [
-  "♡ 𝑮𝒊𝒏𝒏𝒚 𝑳𝒆𝒂𝒏𝒐"
-   ↳ @arciel_imagogin ⟡ @ginnydesigns
-  
-];
+ 
+<div class="square">
+    ♡ 𝑮𝒊𝒏𝒏𝒚 𝑳𝒆𝒂𝒏𝒐
+↳ @arciel_imagogin ⟡ @ginnydesigns<br> 
+  </div>
 
-const color = "ff914d";
 
-const badges = names.map(name => {
-  const encoded = encodeURIComponent(name);
-  return `![name](https://img.shields.io/badge/${encoded}-${color})`;
-});
-
-console.log(badges.join(" "));
-</p>
   </section>
 
 <footer style="padding:28px 10px;text-align:center;border-top:2px solid var(--gold);margin-top:24px;">
