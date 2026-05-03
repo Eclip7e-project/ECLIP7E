@@ -1097,9 +1097,21 @@ To share the warmth of this project, we also feature <strong>weekly favorite not
       This is our wall of light, built by all of us.
     </p>
  <p style="margin-top: 1rem; font-style: italic; color: #ccc;"> 
-   ![n1](https://img.shields.io/badge/%E2%99%A1%20Name1-orange) ![n2](https://img.shields.io/badge/%E2%99%A1%20Name2-orange) ![n3](https://img.shields.io/badge/%E2%99%A1%20Name3-orange)
-  ♡ 𝑮𝒊𝒏𝒏𝒚 𝑳𝒆𝒂𝒏𝒐  
-↳ @arciel_imagogin ⟡ @ginnydesigns</p>
+ const names = [
+  "♡ 𝑮𝒊𝒏𝒏𝒚 𝑳𝒆𝒂𝒏𝒐"
+   ↳ @arciel_imagogin ⟡ @ginnydesigns
+  
+];
+
+const color = "ff914d";
+
+const badges = names.map(name => {
+  const encoded = encodeURIComponent(name);
+  return `![name](https://img.shields.io/badge/${encoded}-${color})`;
+});
+
+console.log(badges.join(" "));
+</p>
   </section>
 
 <footer style="padding:28px 10px;text-align:center;border-top:2px solid var(--gold);margin-top:24px;">
